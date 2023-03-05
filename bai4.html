@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="Result"></p>
+<script>
+  let a = [];
+  let sum = 0;
+  let count = 0;
+  index();
+  element();
+  evenNumber();
+  Prime();
+  sumPrime()
+
+  function index() {
+    let number = parseInt(prompt("do dai"));
+    a.length = number;
+  }
+
+  function element() {
+    for (let i = 0; i < a.length; i++) {
+      a[i] = parseInt(prompt("phan tu"));
+    }
+  }
+
+
+  function evenNumber() {
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] % 2 === 0) {
+        sum += a[i];
+      }
+    }
+  }
+
+  function Prime(n) {
+    let check = 1
+    if (n < 2) {
+      check = 0
+    } else {
+      for (let i = 2; i < n; i++) {
+        if (n % i === 0) {
+          check = 0;
+          break;
+        }
+      }
+      return check;
+    }
+
+  }
+  function sumPrime() {
+    for (let i = 0; i < a.length; i++) {
+      if (Prime(a[i]) === 1) {
+        count += a[i];
+      }
+    }
+    document.write("Result" + a + "<br>" + "Result evenNumber = " + sum + "<br>" + "Result sumPrime = " + count)
+  }
+</script>
+</body>
+</html>
